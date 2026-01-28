@@ -1,0 +1,719 @@
+/* ============================================
+   Apple-Inspired Design System for dtcpay
+   Clean, minimal, sophisticated
+   ============================================ */
+
+/* ============================================
+   Design Tokens - Apple Style
+   ============================================ */
+:root {
+  /* Apple-inspired color palette */
+  --apple-bg-primary: #fbfbfd;
+  --apple-bg-secondary: #f5f5f7;
+  --apple-bg-tertiary: #ffffff;
+  
+  /* Brand colors - refined */
+  --brand-primary: #0071e3;
+  --brand-primary-hover: #0077ed;
+  --brand-secondary: #06c;
+  --brand-cyan: #01b1e9;
+  --brand-cyan-light: #64d2ff;
+  
+  /* Text colors - Apple style */
+  --text-primary: #1d1d1f;
+  --text-secondary: #86868b;
+  --text-tertiary: #6e6e73;
+  
+  /* Spacing scale */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+  --space-2xl: 120px;
+  
+  /* Border radius - Apple prefers subtle curves */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 980px;
+  
+  /* Shadows - subtle and refined */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  
+  /* Transitions - smooth and elegant */
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-normal: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-slow: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+  /* Typography */
+  --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* ============================================
+   Global Styles
+   ============================================ */
+body {
+  font-family: var(--font-family);
+  background: var(--apple-bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   Typography - Apple Style
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.1; }
+h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; }
+h3 { font-size: clamp(24px, 3vw, 32px); line-height: 1.2; }
+h4 { font-size: clamp(20px, 2vw, 24px); line-height: 1.3; }
+
+p {
+  color: var(--text-secondary);
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: var(--font-weight-regular);
+}
+
+/* ============================================
+   Section Spacing - More Breathing Room
+   ============================================ */
+section {
+  padding: var(--space-xl) 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: var(--space-2xl) 0;
+  }
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-xl);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.section-header p {
+  font-size: 19px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   Header - Clean & Minimal
+   ============================================ */
+.header {
+  background: rgba(251, 251, 253, 0.8) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: none;
+}
+
+.header.scrolled {
+  background: rgba(251, 251, 253, 0.9) !important;
+}
+
+/* ============================================
+   Hero Section
+   ============================================ */
+.hero-slider {
+  background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.slide-title {
+  font-weight: var(--font-weight-semibold) !important;
+  letter-spacing: -0.02em;
+}
+
+.slide-btn {
+  background: var(--brand-cyan) !important;
+  border-radius: var(--radius-full) !important;
+  padding: 16px 32px !important;
+  font-weight: var(--font-weight-medium);
+  font-size: 17px;
+  transition: var(--transition-normal);
+}
+
+.slide-btn:hover {
+  background: var(--brand-primary-hover) !important;
+  transform: scale(1.02);
+}
+
+/* Slider dots */
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: var(--transition-fast);
+}
+
+.slider-dot.active {
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   Multi-Currency Section
+   ============================================ */
+.multi-currency-section {
+  background: linear-gradient(180deg, var(--brand-cyan) 0%, #0288d1 100%);
+  clip-path: none;
+  padding: var(--space-2xl) 0;
+}
+
+.multi-currency-content h2,
+.multi-currency-content h6,
+.multi-currency-content p {
+  color: white !important;
+}
+
+.multi-currency-content .btn-primary {
+  background: white !important;
+  color: var(--brand-cyan) !important;
+}
+
+.multi-currency-content .btn-primary:hover {
+  background: var(--apple-bg-secondary) !important;
+}
+
+/* ============================================
+   Cards - Unified Apple Style
+   ============================================ */
+.product-card,
+.feature-card,
+.why-card,
+.testimonial-card,
+.case-study-card {
+  background: var(--apple-bg-tertiary) !important;
+  border: none !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: var(--shadow-card) !important;
+  backdrop-filter: none !important;
+  transition: var(--transition-normal);
+}
+
+.product-card:hover,
+.feature-card:hover,
+.why-card:hover,
+.testimonial-card:hover,
+.case-study-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Remove gradient borders */
+.product-card::before,
+.feature-card::before,
+.why-card::before,
+.case-study-card::before {
+  display: none !important;
+}
+
+/* Card content */
+.product-card-content,
+.case-study-content {
+  padding: var(--space-md);
+}
+
+.product-card-title,
+.case-study-title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+/* ============================================
+   Feature Icons
+   ============================================ */
+.feature-icon {
+  background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-primary) 100%) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: 0 8px 24px rgba(1, 177, 233, 0.2);
+}
+
+.why-icon img {
+  transition: var(--transition-normal);
+}
+
+.why-card:hover .why-icon img {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   Buttons - Apple Style
+   ============================================ */
+.btn {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  font-size: 17px;
+  border-radius: var(--radius-full);
+  padding: 12px 24px;
+  transition: var(--transition-normal);
+}
+
+.btn-primary {
+  background: var(--brand-cyan) !important;
+  border: none;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  background: var(--brand-primary-hover) !important;
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--brand-cyan);
+  color: var(--brand-cyan);
+}
+
+.btn-outline:hover {
+  background: var(--brand-cyan);
+  color: white;
+}
+
+.btn-link {
+  color: var(--brand-cyan);
+  text-decoration: none;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+/* Learn more links */
+.learn-more-link {
+  color: var(--brand-cyan);
+  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.learn-more-link:hover {
+  gap: 10px;
+}
+
+/* ============================================
+   Section Tags
+   ============================================ */
+.section-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(1, 177, 233, 0.1);
+  color: var(--brand-cyan);
+  font-size: 14px;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-full);
+  border: none;
+  margin-bottom: var(--space-sm);
+}
+
+/* ============================================
+   Products Section
+   ============================================ */
+.products-section {
+  background: var(--apple-bg-secondary);
+}
+
+.products-grid {
+  gap: var(--space-md);
+}
+
+/* ============================================
+   Features Section
+   ============================================ */
+.features-section {
+  background: var(--apple-bg-primary);
+}
+
+.features-bg {
+  display: none;
+}
+
+.features-header {
+  margin-bottom: var(--space-xl);
+}
+
+.features-image {
+  margin-bottom: var(--space-xl);
+}
+
+.features-image img {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.features-grid {
+  gap: var(--space-md);
+}
+
+/* ============================================
+   Testimonials Section
+   ============================================ */
+.testimonials-section {
+  background: var(--apple-bg-secondary);
+}
+
+.testimonial-card {
+  padding: var(--space-lg) !important;
+}
+
+.testimonial-card::before {
+  display: none !important;
+}
+
+.testimonial-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-style: normal;
+}
+
+.testimonial-author {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.testimonial-role {
+  color: var(--text-secondary);
+}
+
+/* Fade edges */
+.testimonial-slider::before,
+.testimonial-slider::after {
+  background: linear-gradient(90deg, var(--apple-bg-secondary) 0%, transparent 100%);
+  width: 80px;
+}
+
+.testimonial-slider::after {
+  background: linear-gradient(-90deg, var(--apple-bg-secondary) 0%, transparent 100%);
+}
+
+/* ============================================
+   Case Studies
+   ============================================ */
+.case-studies-section {
+  background: var(--apple-bg-primary);
+}
+
+.case-study-tag {
+  background: var(--brand-cyan);
+  color: white;
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ============================================
+   CTA Section
+   ============================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-primary) 100%) !important;
+  padding: var(--space-xl) 0;
+}
+
+.cta-section::before {
+  display: none;
+}
+
+.cta-text h3 {
+  font-weight: var(--font-weight-semibold);
+}
+
+.cta-btn {
+  background: white !important;
+  color: var(--brand-cyan) !important;
+  border-radius: var(--radius-full);
+  padding: 16px 32px;
+  font-weight: var(--font-weight-medium);
+  font-size: 17px;
+}
+
+.cta-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.cta-diamond {
+  opacity: 0.15;
+}
+
+/* ============================================
+   App Download Section
+   ============================================ */
+.app-section-new {
+  background: var(--apple-bg-secondary);
+  padding: var(--space-xl) 0;
+}
+
+.app-download-card {
+  background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-primary) 100%) !important;
+  border-radius: var(--radius-xl) !important;
+  padding: var(--space-lg) var(--space-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+.app-info h4 {
+  font-weight: var(--font-weight-semibold);
+  font-size: 28px;
+}
+
+.app-store-btn {
+  background: white !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  padding: 14px 20px;
+  border: none !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.app-store-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.store-name {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ============================================
+   Newsletter Section
+   ============================================ */
+.newsletter-section {
+  background: var(--apple-bg-primary);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: var(--space-xl) 0;
+}
+
+.newsletter-content h4 {
+  font-weight: var(--font-weight-semibold);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 400px;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 1px solid #d2d2d7;
+  border-radius: var(--radius-md);
+  font-size: 17px;
+  transition: var(--transition-fast);
+}
+
+.newsletter-input:focus {
+  border-color: var(--brand-cyan);
+  box-shadow: 0 0 0 4px rgba(1, 177, 233, 0.1);
+  outline: none;
+}
+
+.newsletter-btn {
+  background: var(--brand-cyan);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 14px 24px;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.newsletter-btn:hover {
+  background: var(--brand-primary-hover);
+}
+
+/* ============================================
+   Footer - Clean & Light
+   ============================================ */
+.footer {
+  background: var(--apple-bg-secondary) !important;
+  color: var(--text-primary);
+  padding: var(--space-xl) 0 var(--space-lg);
+}
+
+.footer::before {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.footer-column h5 {
+  font-size: 13px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.footer-link a {
+  color: var(--text-secondary) !important;
+  font-size: 14px;
+  transition: var(--transition-fast);
+}
+
+.footer-link a:hover {
+  color: var(--brand-cyan) !important;
+}
+
+.footer-tagline {
+  color: var(--text-secondary) !important;
+}
+
+.social-link {
+  width: 36px !important;
+  height: 36px !important;
+  background: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 50%;
+  transition: var(--transition-fast);
+}
+
+.social-link:hover {
+  background: var(--brand-cyan) !important;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  padding-top: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.footer-legal a,
+.footer-copyright {
+  font-size: 13px;
+  color: var(--text-secondary) !important;
+}
+
+.footer-license {
+  font-size: 12px;
+  color: var(--text-tertiary) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+/* ============================================
+   Scroll to Top
+   ============================================ */
+.scroll-top {
+  background: var(--brand-cyan);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: var(--shadow-md);
+}
+
+.scroll-top:hover {
+  background: var(--brand-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   WhatsApp Button
+   ============================================ */
+.whatsapp-float {
+  width: 54px;
+  height: 54px;
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   Page Loader
+   ============================================ */
+.page-loader {
+  background: var(--apple-bg-primary);
+}
+
+.loader-bar {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.loader-progress {
+  background: var(--brand-cyan);
+}
+
+/* ============================================
+   Notification Bar
+   ============================================ */
+.notification-bar {
+  background: var(--apple-bg-secondary);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+}
+
+/* ============================================
+   Animations - Subtle & Refined
+   ============================================ */
+.fade-in,
+.fade-in-left,
+.fade-in-right,
+.scale-in {
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 60px;
+    --space-2xl: 80px;
+  }
+  
+  h1 { font-size: 36px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 22px; }
+  
+  .app-download-card {
+    padding: var(--space-md);
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .footer-top {
+    gap: var(--space-lg);
+  }
+}
+
+/* ============================================
+   Remove unnecessary effects
+   ============================================ */
+.cursor-glow {
+  display: none !important;
+}
+
+/* Disable heavy animations for better performance */
+.product-card::after,
+.feature-card::after {
+  display: none !important;
+}

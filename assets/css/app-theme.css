@@ -422,11 +422,20 @@ body {
    Footer
    ============================================ */
 .footer {
-  background: linear-gradient(180deg, #0a1628 0%, #060a31 100%);
+  background: linear-gradient(180deg, #1a2d4a 0%, #152238 50%, #0f1a2e 100%);
 }
 
 .footer::before {
   background: linear-gradient(90deg, var(--app-cyan) 0%, var(--app-cyan-light) 50%, var(--app-blue) 100%);
+}
+
+/* Make footer logo more visible */
+.footer-brand img {
+  filter: brightness(1.1);
+}
+
+.footer-tagline {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 /* ============================================

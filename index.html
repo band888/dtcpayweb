@@ -55,6 +55,7 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/enhancements.css">
   
   <!-- Preload critical images -->
   <link rel="preload" as="image" href="assets/images/dtc-logo.svg">
@@ -92,6 +93,19 @@
   </script>
 </head>
 <body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <img src="assets/images/dtc-logo.svg" alt="dtcpay" class="loader-logo">
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cursor Glow Effect -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <!-- Notification Bar -->
   <div class="notification-bar" role="alert">
     <div class="container">

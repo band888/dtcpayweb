@@ -4,6 +4,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Initialize page loader first
+  initPageLoader();
+  
   // Initialize all modules
   initSlider();
   initScrollAnimations();
@@ -14,7 +17,93 @@ document.addEventListener('DOMContentLoaded', function() {
   initNotificationBar();
   initSmoothScroll();
   initLazyLoading();
+  initCursorGlow();
+  initTiltEffect();
 });
+
+/**
+ * Page Loader
+ */
+function initPageLoader() {
+  const loader = document.getElementById('pageLoader');
+  if (!loader) return;
+  
+  // Hide loader when page is fully loaded
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      document.body.style.overflow = '';
+    }, 500);
+  });
+  
+  // Fallback: hide loader after 3 seconds max
+  setTimeout(() => {
+    if (!loader.classList.contains('hidden')) {
+      loader.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }, 3000);
+}
+
+/**
+ * Cursor Glow Effect (Desktop only)
+ */
+function initCursorGlow() {
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (!cursorGlow || window.matchMedia('(hover: none)').matches) return;
+  
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  function animateCursor() {
+    // Smooth follow with easing
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+    
+    cursorGlow.style.left = currentX + 'px';
+    cursorGlow.style.top = currentY + 'px';
+    
+    requestAnimationFrame(animateCursor);
+  }
+  
+  animateCursor();
+}
+
+/**
+ * 3D Tilt Effect for Cards
+ */
+function initTiltEffect() {
+  const cards = document.querySelectorAll('.product-card, .feature-card');
+  
+  if (window.matchMedia('(hover: none)').matches) return;
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  });
+}
 
 /**
  * Hero Slider
@@ -552,4 +641,72 @@ function initParallax() {
 
 initParallax();
 
-console.log('dtcpay website initialized successfully');
+/**
+ * Enhanced Scroll Animations with Stagger
+ */
+function initEnhancedAnimations() {
+  // Add stagger delays to grid items
+  const grids = [
+    { selector: '.products-grid .product-card', delay: 100 },
+    { selector: '.features-grid .feature-card', delay: 100 },
+    { selector: '.why-grid .why-card', delay: 100 },
+    { selector: '.case-studies-grid .case-study-card', delay: 100 }
+  ];
+  
+  grids.forEach(({ selector, delay }) => {
+    document.querySelectorAll(selector).forEach((item, index) => {
+      item.style.transitionDelay = `${index * delay}ms`;
+    });
+  });
+}
+
+// Initialize enhanced animations
+initEnhancedAnimations();
+
+/**
+ * Magnetic Button Effect
+ */
+function initMagneticButtons() {
+  const buttons = document.querySelectorAll('.btn-primary, .cta-btn, .slide-btn');
+  
+  if (window.matchMedia('(hover: none)').matches) return;
+  
+  buttons.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+    });
+    
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+}
+
+initMagneticButtons();
+
+/**
+ * Intersection Observer for Section Reveals
+ */
+function initSectionReveals() {
+  const sections = document.querySelectorAll('section');
+  
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+  
+  sections.forEach(section => sectionObserver.observe(section));
+}
+
+initSectionReveals();
+
+console.log('dtcpay website initialized successfully with enhancements');

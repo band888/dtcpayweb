@@ -1,0 +1,810 @@
+/* ============================================
+   dtcpay Homepage Enhancements
+   Modern animations, effects & visual upgrades
+   ============================================ */
+
+/* Enhanced CSS Variables */
+:root {
+  --gradient-cyan: linear-gradient(135deg, #01b1e9 0%, #00d4ff 50%, #0085c7 100%);
+  --gradient-aurora: linear-gradient(135deg, #01b1e9 0%, #667eea 50%, #764ba2 100%);
+  --gradient-sunset: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-ocean: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --glow-primary: 0 0 40px rgba(1, 177, 233, 0.4);
+  --glow-secondary: 0 0 60px rgba(102, 126, 234, 0.3);
+}
+
+/* ============================================
+   Page Loading Animation
+   ============================================ */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #060a31 0%, #0d1454 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loader-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(1, 177, 233, 0.5));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(1, 177, 233, 0.8));
+    transform: scale(1.05);
+  }
+}
+
+.loader-bar {
+  width: 200px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-progress {
+  height: 100%;
+  background: var(--gradient-cyan);
+  border-radius: 2px;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% { width: 0; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}
+
+/* ============================================
+   Hero Section Enhancements
+   ============================================ */
+.hero-slider {
+  position: relative;
+}
+
+/* Animated gradient overlay */
+.hero-slider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(1, 177, 233, 0.1) 0%,
+    transparent 50%,
+    rgba(102, 126, 234, 0.1) 100%
+  );
+  z-index: 5;
+  pointer-events: none;
+  animation: gradient-shift 10s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Enhanced slide transitions */
+.slide {
+  transform: scale(1.02);
+}
+
+.slide.active {
+  transform: scale(1);
+  animation: slide-zoom 8s ease-out forwards;
+}
+
+@keyframes slide-zoom {
+  0% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Slide content animation */
+.slide.active .slide-title {
+  animation: title-reveal 0.8s ease-out forwards;
+}
+
+@keyframes title-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.slide.active .slide-btn {
+  animation: btn-reveal 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes btn-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced slider dots */
+.slider-dot {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-cyan);
+  border-radius: 50%;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.slider-dot.active::before {
+  transform: scale(1);
+  animation: dot-pulse 2s ease infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(1, 177, 233, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(1, 177, 233, 0);
+  }
+}
+
+/* Slider arrows glow effect */
+.slider-arrow {
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.slider-arrow:hover {
+  background: rgba(1, 177, 233, 0.3);
+  border-color: rgba(1, 177, 233, 0.5);
+  box-shadow: var(--glow-primary);
+}
+
+/* ============================================
+   Multi-Currency Section Enhancements
+   ============================================ */
+.multi-currency-section {
+  position: relative;
+}
+
+/* Floating particles effect */
+.multi-currency-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+    radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+  background-size: 100px 100px, 150px 150px, 200px 200px, 250px 250px;
+  animation: float-particles 20s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes float-particles {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+/* Enhanced image with glow */
+.multi-currency-image img {
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.multi-currency-image:hover img {
+  transform: translateY(-10px) scale(1.02);
+  filter: drop-shadow(0 30px 60px rgba(1, 177, 233, 0.3));
+}
+
+/* ============================================
+   Product Cards - 3D Effects
+   ============================================ */
+.product-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  position: relative;
+  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Gradient border effect */
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #01b1e9, #667eea, #764ba2, #01b1e9);
+  background-size: 300% 300%;
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: gradient-border 4s ease infinite;
+}
+
+@keyframes gradient-border {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-12px) rotateX(5deg);
+  box-shadow: 
+    0 25px 50px rgba(1, 177, 233, 0.15),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Card shine effect */
+.product-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+.product-card:hover::after {
+  left: 100%;
+}
+
+/* ============================================
+   Features Section Enhancements
+   ============================================ */
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(1, 177, 233, 0.1);
+}
+
+/* Glowing background on hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(1, 177, 233, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.feature-card:hover::before {
+  width: 300%;
+  height: 300%;
+}
+
+.feature-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced feature icon */
+.feature-icon {
+  position: relative;
+  background: var(--gradient-cyan);
+  box-shadow: 0 10px 30px rgba(1, 177, 233, 0.3);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotateY(10deg);
+  box-shadow: 0 15px 40px rgba(1, 177, 233, 0.4);
+}
+
+/* Icon pulse animation */
+.feature-icon::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 16px;
+  border: 2px solid rgba(1, 177, 233, 0.3);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon::after {
+  opacity: 1;
+  animation: icon-pulse 1.5s ease infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Why dtcpay Cards Enhancement
+   ============================================ */
+.why-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.why-card:hover::before {
+  transform: scaleX(1);
+}
+
+.why-icon {
+  transition: all 0.3s ease;
+}
+
+.why-card:hover .why-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 10px 20px rgba(1, 177, 233, 0.3));
+}
+
+/* ============================================
+   Testimonials Enhancements
+   ============================================ */
+.testimonial-card {
+  position: relative;
+  border: 1px solid rgba(1, 177, 233, 0.1);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 80px;
+  font-family: Georgia, serif;
+  color: rgba(1, 177, 233, 0.1);
+  line-height: 1;
+}
+
+.testimonial-card:hover {
+  border-color: rgba(1, 177, 233, 0.3);
+  box-shadow: 0 20px 40px rgba(1, 177, 233, 0.1);
+}
+
+/* Improved infinite scroll */
+.testimonial-track {
+  animation: scroll 30s linear infinite;
+}
+
+.testimonial-slider::before,
+.testimonial-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.testimonial-slider::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--gray-50) 0%, transparent 100%);
+}
+
+.testimonial-slider::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--gray-50) 0%, transparent 100%);
+}
+
+/* ============================================
+   Case Studies Enhancements
+   ============================================ */
+.case-study-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.case-study-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-cyan);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.case-study-card:hover::before {
+  transform: scaleX(1);
+}
+
+.case-study-tag {
+  background: var(--gradient-cyan);
+  color: white;
+  font-weight: 500;
+}
+
+/* ============================================
+   CTA Section Enhancements
+   ============================================ */
+.cta-section {
+  position: relative;
+  background: linear-gradient(135deg, #01b1e9 0%, #0085c7 50%, #060a31 100%);
+  background-size: 200% 200%;
+  animation: gradient-flow 8s ease infinite;
+}
+
+@keyframes gradient-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Animated light rays */
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.03) 60deg,
+    transparent 120deg
+  );
+  animation: rotate-rays 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate-rays {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced CTA button */
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(1, 177, 233, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.cta-btn:hover::before {
+  left: 100%;
+}
+
+/* Floating diamond animation */
+.cta-diamond {
+  animation: float-diamond 6s ease-in-out infinite;
+}
+
+@keyframes float-diamond {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+/* ============================================
+   Button Enhancements
+   ============================================ */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: var(--gradient-cyan);
+  border: none;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover {
+  background: var(--gradient-cyan);
+  box-shadow: var(--glow-primary);
+}
+
+/* ============================================
+   Scroll Animations
+   ============================================ */
+.fade-in,
+.fade-in-left,
+.fade-in-right,
+.scale-in {
+  will-change: transform, opacity;
+}
+
+/* Stagger animation for grids */
+.products-grid .product-card:nth-child(1) { transition-delay: 0s; }
+.products-grid .product-card:nth-child(2) { transition-delay: 0.1s; }
+.products-grid .product-card:nth-child(3) { transition-delay: 0.2s; }
+
+.features-grid .feature-card:nth-child(1) { transition-delay: 0s; }
+.features-grid .feature-card:nth-child(2) { transition-delay: 0.1s; }
+.features-grid .feature-card:nth-child(3) { transition-delay: 0.2s; }
+.features-grid .feature-card:nth-child(4) { transition-delay: 0.3s; }
+
+.why-grid .why-card:nth-child(1) { transition-delay: 0s; }
+.why-grid .why-card:nth-child(2) { transition-delay: 0.1s; }
+.why-grid .why-card:nth-child(3) { transition-delay: 0.2s; }
+
+/* ============================================
+   Header Enhancement
+   ============================================ */
+.header {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   Footer Enhancements
+   ============================================ */
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-cyan);
+}
+
+.social-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-cyan);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+
+.social-link:hover::before {
+  opacity: 1;
+}
+
+.social-link img {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================
+   Scroll to Top Enhancement
+   ============================================ */
+.scroll-top {
+  background: var(--gradient-cyan);
+  box-shadow: var(--glow-primary);
+}
+
+.scroll-top:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* ============================================
+   WhatsApp Button Enhancement
+   ============================================ */
+.whatsapp-float {
+  position: relative;
+}
+
+.whatsapp-float::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: #25d366;
+  border-radius: 50%;
+  animation: whatsapp-pulse 2s ease infinite;
+  z-index: -1;
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   Cursor Effects (Optional - Desktop only)
+   ============================================ */
+@media (hover: hover) {
+  .cursor-glow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(1, 177, 233, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  body:hover .cursor-glow {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   Responsive Enhancements
+   ============================================ */
+@media (max-width: 768px) {
+  .product-card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: scale(1.05);
+  }
+  
+  .cta-section::before {
+    display: none;
+  }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .testimonial-track {
+    animation: none;
+  }
+}
+
+/* ============================================
+   Dark Mode Preparation (Future)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  /* Can be enabled later */
+}

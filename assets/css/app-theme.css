@@ -419,23 +419,78 @@ body {
 }
 
 /* ============================================
-   Footer
+   Footer - Light Theme
    ============================================ */
 .footer {
-  background: linear-gradient(180deg, #1a2d4a 0%, #152238 50%, #0f1a2e 100%);
+  background: linear-gradient(180deg, var(--app-bg-mid) 0%, var(--app-bg-start) 50%, #cce9f5 100%);
+  color: var(--app-text-dark);
 }
 
 .footer::before {
   background: linear-gradient(90deg, var(--app-cyan) 0%, var(--app-cyan-light) 50%, var(--app-blue) 100%);
+  height: 3px;
 }
 
-/* Make footer logo more visible */
+/* Footer text colors for light background */
 .footer-brand img {
-  filter: brightness(1.1);
+  filter: none;
 }
 
 .footer-tagline {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: var(--app-text-medium) !important;
+}
+
+.footer-column h5 {
+  color: var(--app-text-dark) !important;
+}
+
+.footer-link a {
+  color: var(--app-text-medium) !important;
+}
+
+.footer-link a:hover {
+  color: var(--app-cyan) !important;
+}
+
+.social-link {
+  background: rgba(1, 177, 233, 0.1) !important;
+}
+
+.social-link:hover {
+  background: var(--app-cyan) !important;
+}
+
+.social-link img {
+  filter: brightness(0) saturate(100%) invert(52%) sepia(89%) saturate(1234%) hue-rotate(166deg) brightness(97%) contrast(101%);
+}
+
+.social-link:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.footer-bottom {
+  border-top-color: rgba(1, 177, 233, 0.15) !important;
+}
+
+.footer-legal a {
+  color: var(--app-text-medium) !important;
+}
+
+.footer-legal a:hover {
+  color: var(--app-cyan) !important;
+}
+
+.footer-copyright {
+  color: var(--app-text-light) !important;
+}
+
+.footer-license {
+  border-top-color: rgba(1, 177, 233, 0.1) !important;
+  color: var(--app-text-light) !important;
+}
+
+.footer-license a {
+  color: var(--app-cyan) !important;
 }
 
 /* ============================================

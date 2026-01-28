@@ -434,15 +434,24 @@
   transition: all 0.3s ease;
 }
 
+/* Decorative quote mark - positioned to not obstruct content */
 .testimonial-card::before {
   content: '"';
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 80px;
+  top: 10px;
+  right: 20px;
+  font-size: 60px;
   font-family: Georgia, serif;
-  color: rgba(1, 177, 233, 0.1);
+  color: rgba(1, 177, 233, 0.08);
   line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure all card content is above the decorative quote */
+.testimonial-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .testimonial-card:hover {

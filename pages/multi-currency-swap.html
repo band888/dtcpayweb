@@ -106,12 +106,25 @@
       width: 80px;
       height: 80px;
       margin: 0 auto 24px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(135deg, #01b1e9 0%, #0066cc 100%);
+      box-shadow: 0 8px 24px rgba(1, 177, 233, 0.3);
+    }
+    
+    .feature-icon svg {
+      width: 40px;
+      height: 40px;
+      color: white;
+      stroke: white;
+      fill: none;
     }
     
     .feature-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
+      display: none;
     }
     
     .swap-types-section {
@@ -265,7 +278,12 @@
         <div class="features-grid">
           <article class="feature-item fade-in">
             <div class="feature-icon">
-              <img src="../assets/images/featured-icon-1.png" alt="Pay In">
+              <!-- Pay In Icon - Download/Deposit Arrow -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
             </div>
             <h3>Pay In</h3>
             <p>Deposit your fiat or stablecoins.</p>
@@ -273,7 +291,12 @@
           
           <article class="feature-item fade-in delay-100">
             <div class="feature-icon">
-              <img src="../assets/images/featured-icon-2.png" alt="Pay Out">
+              <!-- Pay Out Icon - Upload/Withdraw Arrow -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
             </div>
             <h3>Pay Out</h3>
             <p>Easily withdraw your fiat currency or stablecoins to your accounts, giving you the flexibility to choose how you want to receive your funds.</p>
@@ -281,7 +304,13 @@
           
           <article class="feature-item fade-in delay-200">
             <div class="feature-icon">
-              <img src="../assets/images/featured-icon-3.png" alt="Swap">
+              <!-- Swap Icon - Exchange Arrows -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="17 1 21 5 17 9"/>
+                <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+                <polyline points="7 23 3 19 7 15"/>
+                <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+              </svg>
             </div>
             <h3>Swap</h3>
             <p>Seamlessly convert between fiat and stablecoins with the lowest fees on the market at competitive real-time rates.</p>

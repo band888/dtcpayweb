@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Create Your Account | dtcpay</title>
+  <meta name="description" content="Create your dtcpay Multi-Currency Swap account. Access multiple fiat & digital currencies with low cost and transparent pricing. Licensed by MAS.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dtcpay.com/registration">
+  <meta name="theme-color" content="#01b1e9">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/dtc-logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  
+  <style>
+    .registration-section {
+      min-height: calc(100vh - 86px);
+      background: linear-gradient(135deg, #01b1e9 0%, #0085c7 100%);
+      padding: 80px 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .registration-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .registration-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .registration-info {
+      color: white;
+    }
+    
+    .registration-info h1 {
+      font-size: clamp(28px, 4vw, 40px);
+      margin-bottom: 32px;
+      color: white;
+    }
+    
+    .benefits-list {
+      list-style: none;
+    }
+    
+    .benefits-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 18px;
+    }
+    
+    .benefits-list li img {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    
+    .registration-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+    
+    .account-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 32px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid var(--primary-color);
+    }
+    
+    .account-tab {
+      flex: 1;
+      padding: 16px 24px;
+      border: none;
+      background: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--primary-color);
+    }
+    
+    .account-tab.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .account-tab:hover:not(.active) {
+      background: rgba(1, 177, 233, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 24px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .form-label .required {
+      color: #ef4444;
+    }
+    
+    .form-input, .form-select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--gray-300);
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s ease;
+      font-family: inherit;
+    }
+    
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(1, 177, 233, 0.1);
+    }
+    
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    .password-input-wrapper {
+      position: relative;
+    }
+    
+    .password-toggle {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-gray);
+    }
+    
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    
+    .form-checkbox input {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary-color);
+      flex-shrink: 0;
+    }
+    
+    .form-checkbox label {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    
+    .form-checkbox label a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(1, 177, 233, 0.4);
+    }
+    
+    .submit-btn:disabled {
+      background: var(--gray-300);
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .login-link {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--text-secondary);
+    }
+    
+    .login-link a {
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+    
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0;
+      color: var(--text-gray);
+    }
+    
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-200);
+    }
+    
+    .divider span {
+      padding: 0 16px;
+      font-size: 14px;
+    }
+    
+    .app-download {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    
+    .app-download img {
+      height: 45px;
+      transition: transform 0.2s ease;
+    }
+    
+    .app-download a:hover img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">
+          <img src="../assets/images/dtc-logo.svg" alt="dtcpay Logo" width="120" height="32">
+        </a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#" class="nav-link">Products <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Industries <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About Us <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a></li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <a href="https://business.dtcpay.com/" class="btn btn-link" target="_blank">Log in</a>
+          <a href="contact.html" class="btn btn-primary">Book a Demo</a>
+          <a href="registration.html" class="btn btn-outline">Sign Up</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01b1e9" stroke-width="2">
+            <path d="M4 12h16M4 18h16M4 6h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header-spacer"></div>
+
+  <main>
+    <!-- Registration Section -->
+    <section class="registration-section">
+      <div class="container">
+        <div class="registration-grid">
+          <!-- Left Side - Info -->
+          <div class="registration-info fade-in">
+            <h1>Create Your Multi-Currency Swap Account</h1>
+            <ul class="benefits-list">
+              <li>
+                <img src="../assets/images/check-icon.svg" alt="">
+                <span>Access to multiple fiat & digital currencies</span>
+              </li>
+              <li>
+                <img src="../assets/images/check-icon.svg" alt="">
+                <span>Low cost and transparent pricing in the market</span>
+              </li>
+              <li>
+                <img src="../assets/images/check-icon.svg" alt="">
+                <span>Licensed and regulated by MAS</span>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Right Side - Form -->
+          <div class="registration-card fade-in delay-200">
+            <!-- Account Type Tabs -->
+            <div class="account-tabs">
+              <button class="account-tab active" data-type="corporate">Corporate</button>
+              <button class="account-tab" data-type="merchant">Merchant</button>
+            </div>
+            
+            <form id="registration-form">
+              <!-- Corporate Form -->
+              <div id="corporate-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">First Name <span class="required">*</span></label>
+                    <input type="text" class="form-input" required placeholder="First name">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Last Name <span class="required">*</span></label>
+                    <input type="text" class="form-input" required placeholder="Last name">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Company Name <span class="required">*</span></label>
+                  <input type="text" class="form-input" required placeholder="Your company name">
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Business Email <span class="required">*</span></label>
+                  <input type="email" class="form-input" required placeholder="email@company.com">
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Country of Incorporation <span class="required">*</span></label>
+                  <select class="form-select" required>
+                    <option value="">Select country</option>
+                    <option value="SG">Singapore</option>
+                    <option value="HK">Hong Kong</option>
+                    <option value="US">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="AU">Australia</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Password <span class="required">*</span></label>
+                  <div class="password-input-wrapper">
+                    <input type="password" class="form-input" required placeholder="Create a password" id="password">
+                    <button type="button" class="password-toggle" onclick="togglePassword()">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                
+                <div class="form-checkbox">
+                  <input type="checkbox" id="terms" required>
+                  <label for="terms">I agree to dtcpay's <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></label>
+                </div>
+                
+                <div class="form-checkbox">
+                  <input type="checkbox" id="marketing">
+                  <label for="marketing">I agree to receive marketing communications from Digital Treasures Center</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">Create Account</button>
+              </div>
+            </form>
+            
+            <p class="login-link">
+              Already have an account? <a href="https://business.dtcpay.com/" target="_blank">Log in</a>
+            </p>
+            
+            <div class="divider">
+              <span>Or download our app</span>
+            </div>
+            
+            <div class="app-download">
+              <a href="https://apps.apple.com/sg/app/dtc-wallet/id1644858468" target="_blank">
+                <img src="../assets/images/apple-store.svg" alt="Download on App Store">
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.dtc.wallet.app" target="_blank">
+                <img src="../assets/images/google-play.svg" alt="Get it on Google Play">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h4>Want to stay up to date?</h4>
+          <p>Be the first to know about releases and industry news and insights.</p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <p class="newsletter-note">We care about your data in our <a href="privacy.html">privacy policy</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../assets/images/dtc-light.png" alt="dtcpay">
+          <p class="footer-tagline">Tomorrow's Payments, Today</p>
+          <nav class="social-links">
+            <a href="https://www.linkedin.com/company/dtcpay/" class="social-link" target="_blank"><img src="../assets/images/linkedin-light.svg" alt=""></a>
+            <a href="https://twitter.com/dtc_pay" class="social-link" target="_blank"><img src="../assets/images/x.svg" alt=""></a>
+            <a href="https://www.facebook.com/dtcpay" class="social-link" target="_blank"><img src="../assets/images/facebook-light.svg" alt=""></a>
+            <a href="https://www.instagram.com/dtcpay/" class="social-link" target="_blank"><img src="../assets/images/instagram-light.svg" alt=""></a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <h5>Products</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="multi-currency-swap.html">Multi-Currency Swap</a></li>
+            <li class="footer-link"><a href="pos.html">POS+</a></li>
+            <li class="footer-link"><a href="checkout.html">Checkout</a></li>
+            <li class="footer-link"><a href="dtcpay-card.html">dtcpay Card</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>About Us</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Who we are</a></li>
+            <li class="footer-link"><a href="licenses.html">Global Licenses</a></li>
+            <li class="footer-link"><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="blog.html">Blog</a></li>
+            <li class="footer-link"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link"><a href="faq.html">Support Center</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <nav class="footer-legal">
+          <a href="terms.html">Terms of Business</a>
+          <a href="risk-warning.html">Risk Warning</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+        <p class="footer-copyright">&copy;2026 dtcpay. All rights reserved.</p>
+      </div>
+      <div class="footer-license">
+        <p>dtcpay is a brand of <a href="https://eservices.mas.gov.sg/fid/institution/detail/248348-DIGITAL-TREASURES-CENTER-PTE-LTD" target="_blank">Digital Treasures Center Pte Ltd</a>, licensed by MAS (PS20200531).</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6585000000" class="whatsapp-float" target="_blank">
+    <img src="../assets/images/whatsapp.svg" alt="WhatsApp">
+  </a>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Account type tabs
+    document.querySelectorAll('.account-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.account-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+      });
+    });
+    
+    // Password toggle
+    function togglePassword() {
+      const input = document.getElementById('password');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+    
+    // Form submission
+    document.getElementById('registration-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for registering! You will receive a confirmation email shortly.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

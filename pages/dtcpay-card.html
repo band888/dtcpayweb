@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Primary Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dtcpay Card - Visa Card for Stablecoins | dtcpay</title>
+  <meta name="description" content="Seamlessly convert your stablecoins to SGD for spending at over 150 million Visa acceptance locations worldwide. Introducing the dtcpay Visa cards.">
+  <meta name="keywords" content="dtcpay card, Visa card, stablecoin card, USDT card, USDC card, crypto Visa, Singapore crypto card">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://dtcpay.com/dtcpay-card">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dtcpay.com/dtcpay-card">
+  <meta property="og:title" content="dtcpay Card - Visa Card for Stablecoins">
+  <meta property="og:description" content="Seamlessly convert your stablecoins to SGD for spending at over 150 million Visa acceptance locations worldwide.">
+  <meta property="og:image" content="https://dtcpay.com/dtcpay.jpg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="dtcpay Card - Visa Card for Stablecoins">
+  <meta name="twitter:description" content="Seamlessly convert your stablecoins to SGD for spending at over 150 million Visa acceptance locations worldwide.">
+  
+  <!-- PWA -->
+  <meta name="theme-color" content="#01b1e9">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../assets/images/dtc-logo.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  
+  <!-- Page-specific styles -->
+  <style>
+    .card-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #01b1e9 0%, #0085c7 100%);
+      overflow: hidden;
+    }
+    
+    .card-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('../assets/images/gradient-1.png') center/cover;
+      opacity: 0.3;
+    }
+    
+    .card-hero-content {
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .card-hero-content {
+        grid-template-columns: 7fr 5fr;
+      }
+    }
+    
+    .card-hero-text {
+      color: white;
+      text-align: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .card-hero-text {
+        text-align: left;
+      }
+    }
+    
+    .card-hero-text h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      color: white;
+    }
+    
+    .card-hero-text p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 32px;
+      max-width: 500px;
+    }
+    
+    .card-hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    @media (min-width: 1024px) {
+      .card-hero-buttons {
+        justify-content: flex-start;
+      }
+    }
+    
+    .card-hero-image {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .card-hero-image img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .card-types-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+    
+    .card-types-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    @media (min-width: 768px) {
+      .card-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .card-type-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card-type-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+    
+    .card-type-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .card-type-card.premium {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+    }
+    
+    .card-type-card.premium::before {
+      background: linear-gradient(90deg, #ffd700, #ffaa00);
+    }
+    
+    .card-type-card.premium h3,
+    .card-type-card.premium p {
+      color: white;
+    }
+    
+    .card-type-card.premium .feature-list li {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .card-type-image {
+      width: 200px;
+      height: 130px;
+      margin: 0 auto 24px;
+      background: linear-gradient(135deg, var(--primary-color), #0085c7);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(1, 177, 233, 0.3);
+    }
+    
+    .card-type-card.premium .card-type-image {
+      background: linear-gradient(135deg, #ffd700, #b8860b);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+      color: #1a1a2e;
+    }
+    
+    .card-type-name {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-gray);
+      margin-bottom: 8px;
+    }
+    
+    .card-type-card.premium .card-type-name {
+      color: #ffd700;
+    }
+    
+    .card-type-card h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    
+    .feature-list {
+      list-style: none;
+      text-align: left;
+      margin: 24px 0;
+    }
+    
+    .feature-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .card-type-card.premium .feature-list li {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .feature-list li svg {
+      flex-shrink: 0;
+      color: var(--primary-color);
+    }
+    
+    .card-type-card.premium .feature-list li svg {
+      color: #ffd700;
+    }
+    
+    .benefits-section {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    @media (min-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    
+    .benefit-card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      transition: all var(--transition-normal);
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .benefit-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      background: rgba(1, 177, 233, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .benefit-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--primary-color);
+    }
+    
+    .perks-section {
+      padding: 100px 0;
+      background: white;
+    }
+    
+    .perks-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    @media (min-width: 768px) {
+      .perks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .perks-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .perk-card {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+    }
+    
+    .perk-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px);
+    }
+    
+    .perk-image {
+      height: 180px;
+      overflow: hidden;
+    }
+    
+    .perk-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    
+    .perk-card:hover .perk-image img {
+      transform: scale(1.05);
+    }
+    
+    .perk-content {
+      padding: 24px;
+    }
+    
+    .perk-content h4 {
+      margin-bottom: 8px;
+    }
+    
+    .perk-content p {
+      font-size: 14px;
+      color: var(--text-gray);
+    }
+    
+    .how-it-works-section {
+      padding: 100px 0;
+      background: var(--gradient-dark);
+      color: white;
+    }
+    
+    .how-it-works-section h2 {
+      color: white;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .steps-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    @media (min-width: 768px) {
+      .steps-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .step-card {
+      text-align: center;
+      padding: 40px 30px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      transition: all var(--transition-normal);
+    }
+    
+    .step-card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-8px);
+    }
+    
+    .step-number {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .step-card h4 {
+      color: white;
+      margin-bottom: 12px;
+    }
+    
+    .step-card p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    
+    .supported-coins-section {
+      padding: 80px 0;
+      background: white;
+    }
+    
+    .coins-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    
+    .coin-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      background: var(--gray-50);
+      border-radius: 12px;
+      font-weight: 500;
+    }
+    
+    .coin-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #26a17b, #1a7a5c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    
+    .coin-icon.usdc {
+      background: linear-gradient(135deg, #2775ca, #1a5a9e);
+    }
+    
+    .coin-icon.fdusd {
+      background: linear-gradient(135deg, #f0b90b, #d4a50a);
+    }
+    
+    .coin-icon.wusd {
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+    }
+  </style>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "dtcpay Visa Card",
+    "description": "Seamlessly convert your stablecoins to SGD for spending at over 150 million Visa acceptance locations worldwide.",
+    "brand": {
+      "@type": "Brand",
+      "name": "dtcpay"
+    },
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header (Same as index.html) -->
+  <header class="header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo" aria-label="dtcpay Home">
+          <img src="../assets/images/dtc-logo.svg" alt="dtcpay Logo" width="120" height="32">
+        </a>
+        
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Products <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+              <div class="dropdown">
+                <a href="multi-currency-swap.html" class="dropdown-item"><div class="dropdown-title">Multi-Currency Swap</div></a>
+                <a href="pos.html" class="dropdown-item"><div class="dropdown-title">POS+</div></a>
+                <a href="checkout.html" class="dropdown-item"><div class="dropdown-title">Checkout</div></a>
+                <a href="dtcpay-card.html" class="dropdown-item"><div class="dropdown-title">dtcpay Card</div></a>
+              </div>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Industries <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About Us <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a></li>
+          </ul>
+        </nav>
+        
+        <div class="header-right">
+          <a href="https://business.dtcpay.com/" class="btn btn-link" target="_blank">Log in</a>
+          <a href="contact.html" class="btn btn-primary">Book a Demo</a>
+          <a href="registration.html" class="btn btn-outline">Sign Up</a>
+        </div>
+        
+        <button class="mobile-menu-btn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01b1e9" stroke-width="2">
+            <path d="M4 12h16M4 18h16M4 6h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="header-spacer"></div>
+
+  <main id="main-content">
+    <!-- Card Hero Section -->
+    <section class="card-hero" aria-labelledby="card-hero-heading">
+      <div class="container">
+        <div class="card-hero-content">
+          <div class="card-hero-text">
+            <h1 id="card-hero-heading" class="fade-in">Introducing the<br>dtcpay Visa cards!</h1>
+            <p class="fade-in delay-100">Seamlessly convert your stablecoins to SGD for spending at over 150 million Visa acceptance locations worldwide.</p>
+            <div class="card-hero-buttons fade-in delay-200">
+              <a href="https://apps.apple.com/sg/app/dtc-wallet/id1644858468" class="btn btn-primary" target="_blank">Get Started</a>
+              <a href="#how-it-works" class="btn btn-outline" style="color: white; border-color: white;">Learn More</a>
+            </div>
+          </div>
+          <div class="card-hero-image scale-in delay-300">
+            <div style="width: 350px; height: 220px; background: linear-gradient(135deg, #01b1e9, #0085c7); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 600; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
+              dtcpay VISA
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Card Types Section -->
+    <section class="card-types-section" aria-labelledby="card-types-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="card-types-heading" class="fade-in">Choose Your Card</h2>
+          <p class="fade-in delay-100">Select the card that best fits your lifestyle and spending needs.</p>
+        </div>
+        
+        <div class="card-types-grid">
+          <!-- Standard Card -->
+          <article class="card-type-card fade-in">
+            <div class="card-type-image">dtcpay</div>
+            <p class="card-type-name">Standard</p>
+            <h3>dtcpay Blue</h3>
+            <ul class="feature-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Accepted at 150M+ Visa locations</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Real-time stablecoin to SGD conversion</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Low transaction fees</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Secure and compliant</span>
+              </li>
+            </ul>
+            <a href="registration.html" class="btn btn-primary" style="width: 100%;">Apply Now</a>
+          </article>
+          
+          <!-- Premium Card -->
+          <article class="card-type-card premium fade-in delay-100">
+            <div class="card-type-image">dtcpay GOLD</div>
+            <p class="card-type-name">Premium</p>
+            <h3>dtcpay Gold</h3>
+            <ul class="feature-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>All Standard benefits included</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Higher spending limits</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Exclusive concierge services</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Priority customer support</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                <span>Airport lounge access</span>
+              </li>
+            </ul>
+            <a href="registration.html" class="btn btn-primary" style="width: 100%; background: #ffd700; color: #1a1a2e;">Apply Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" aria-labelledby="benefits-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="benefits-heading" class="fade-in">Card Benefits</h2>
+          <p class="fade-in delay-100">Enjoy exclusive benefits designed for the modern digital economy.</p>
+        </div>
+        
+        <div class="benefits-grid">
+          <article class="benefit-card fade-in">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                <path d="M2 12h20"/>
+              </svg>
+            </div>
+            <h4>Global Acceptance</h4>
+            <p>Spend at over 150 million Visa acceptance locations worldwide.</p>
+          </article>
+          
+          <article class="benefit-card fade-in delay-100">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <h4>Real-time Conversion</h4>
+            <p>Convert stablecoins to SGD instantly at the best rates.</p>
+          </article>
+          
+          <article class="benefit-card fade-in delay-200">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <h4>Secure & Compliant</h4>
+            <p>MAS-licensed and fully compliant with regulatory standards.</p>
+          </article>
+          
+          <article class="benefit-card fade-in delay-300">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+                <line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+            </div>
+            <h4>Low Fees</h4>
+            <p>Competitive transaction fees with no hidden charges.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works" aria-labelledby="how-it-works-heading">
+      <div class="container">
+        <h2 id="how-it-works-heading" class="fade-in">How It Works</h2>
+        
+        <div class="steps-container">
+          <article class="step-card fade-in">
+            <div class="step-number">1</div>
+            <h4>Download the App</h4>
+            <p>Get the dtcpay app from the App Store or Google Play.</p>
+          </article>
+          
+          <article class="step-card fade-in delay-100">
+            <div class="step-number">2</div>
+            <h4>Complete KYC</h4>
+            <p>Verify your identity with our quick and secure process.</p>
+          </article>
+          
+          <article class="step-card fade-in delay-200">
+            <div class="step-number">3</div>
+            <h4>Get Your Card</h4>
+            <p>Apply for your card and start spending with stablecoins.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supported Stablecoins -->
+    <section class="supported-coins-section" aria-labelledby="coins-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="coins-heading" class="fade-in">Supported Stablecoins</h2>
+          <p class="fade-in delay-100">Use your favorite stablecoins for everyday spending.</p>
+        </div>
+        
+        <div class="coins-grid">
+          <div class="coin-badge fade-in">
+            <div class="coin-icon">USDT</div>
+            <span>Tether USDT</span>
+          </div>
+          <div class="coin-badge fade-in delay-100">
+            <div class="coin-icon usdc">USDC</div>
+            <span>USD Coin</span>
+          </div>
+          <div class="coin-badge fade-in delay-200">
+            <div class="coin-icon fdusd">FDUSD</div>
+            <span>First Digital USD</span>
+          </div>
+          <div class="coin-badge fade-in delay-300">
+            <div class="coin-icon wusd">WUSD</div>
+            <span>WUSD</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-text">
+            <h3 class="fade-in">Ready to get your dtcpay card?</h3>
+            <p class="fade-in delay-100">Download the app and apply for your card today.</p>
+          </div>
+          <a href="https://apps.apple.com/sg/app/dtc-wallet/id1644858468" class="cta-btn fade-in delay-200" target="_blank">Get Started</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Same as index.html) -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../assets/images/dtc-light.png" alt="dtcpay">
+          <p class="footer-tagline">Tomorrow's Payments, Today</p>
+          <nav class="social-links" aria-label="Social media links">
+            <a href="https://www.linkedin.com/company/dtcpay/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="../assets/images/linkedin-light.svg" alt=""></a>
+            <a href="https://twitter.com/dtc_pay" class="social-link" target="_blank" rel="noopener" aria-label="Twitter"><img src="../assets/images/x.svg" alt=""></a>
+            <a href="https://www.facebook.com/dtcpay" class="social-link" target="_blank" rel="noopener" aria-label="Facebook"><img src="../assets/images/facebook-light.svg" alt=""></a>
+            <a href="https://www.instagram.com/dtcpay/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram"><img src="../assets/images/instagram-light.svg" alt=""></a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <h5>Products</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="multi-currency-swap.html">Multi-Currency Swap</a></li>
+            <li class="footer-link"><a href="pos.html">POS+</a></li>
+            <li class="footer-link"><a href="checkout.html">Checkout</a></li>
+            <li class="footer-link"><a href="dtcpay-card.html">dtcpay Card</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>About Us</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Who we are</a></li>
+            <li class="footer-link"><a href="licenses.html">Global Licenses</a></li>
+            <li class="footer-link"><a href="careers.html">Careers</a></li>
+            <li class="footer-link"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="blog.html">Blog</a></li>
+            <li class="footer-link"><a href="case-studies.html">Case Studies</a></li>
+            <li class="footer-link"><a href="faq.html">Support Center</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <nav class="footer-legal"><a href="terms.html">Terms of Business</a><a href="risk-warning.html">Risk Warning</a><a href="privacy.html">Privacy</a></nav>
+        <p class="footer-copyright">&copy;2026 dtcpay. All rights reserved.</p>
+      </div>
+      <div class="footer-license">
+        <p>dtcpay is a brand of <a href="https://eservices.mas.gov.sg/fid/institution/detail/248348-DIGITAL-TREASURES-CENTER-PTE-LTD" target="_blank" rel="noopener">Digital Treasures Center Pte Ltd</a>, licensed by MAS (PS20200531).</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6585000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
+    <img src="../assets/images/whatsapp.svg" alt="">
+  </a>
+
+  <button class="scroll-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayByLink - Create Payment Links Instantly | dtcpay</title>
+  <meta name="description" content="Create payment links and receive payments instantly. Share links via email, WhatsApp, or any channel. No code required. Accept stablecoins and cards.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dtcpay.com/pay-by-link">
+  <meta name="theme-color" content="#01b1e9">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/dtc-logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .pbl-hero { padding: 100px 0; background: linear-gradient(135deg, #01b1e9 0%, #0085c7 100%); }
+    .pbl-hero-grid { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
+    @media (min-width: 1024px) { .pbl-hero-grid { grid-template-columns: 1fr 1fr; } }
+    .pbl-hero-text { color: white; }
+    .pbl-hero-text h1 { font-size: clamp(28px, 4vw, 44px); margin-bottom: 24px; color: white; }
+    .pbl-hero-text p { font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 32px; }
+    .pbl-hero-image img { max-width: 100%; border-radius: 16px; }
+    .how-it-works { padding: 100px 0; background: white; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+    .step-card { text-align: center; padding: 40px 30px; }
+    .step-icon { width: 80px; height: 80px; margin: 0 auto 20px; }
+    .step-icon img { width: 100%; height: 100%; object-fit: contain; }
+    .step-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .step-desc { color: var(--text-gray); }
+    .benefits-tabs { padding: 100px 0; background: var(--gray-50); }
+    .tabs-container { display: flex; justify-content: center; gap: 16px; margin-bottom: 40px; flex-wrap: wrap; }
+    .tab-btn { padding: 12px 24px; border: 2px solid var(--primary-color); border-radius: 30px; background: white; cursor: pointer; font-weight: 500; transition: all 0.3s ease; }
+    .tab-btn.active, .tab-btn:hover { background: var(--primary-color); color: white; }
+    .tab-content { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
+    @media (min-width: 1024px) { .tab-content { grid-template-columns: 1fr 1fr; } }
+    .tab-image img { max-width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg); }
+    .features-list { padding: 100px 0; background: white; }
+    .features-flex { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .feature-badge { display: flex; align-items: center; gap: 12px; padding: 16px 24px; background: var(--gray-50); border-radius: 12px; }
+    .feature-badge img { width: 32px; height: 32px; }
+    .faq-section { padding: 100px 0; background: var(--gray-50); }
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { background: white; border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+    .faq-question { padding: 20px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 500; }
+    .faq-question:hover { background: var(--gray-50); }
+    .faq-answer { padding: 0 24px 20px; color: var(--text-gray); display: none; }
+    .faq-item.open .faq-answer { display: block; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo"><img src="../assets/images/dtc-logo.svg" alt="dtcpay Logo" width="120" height="32"></a>
+        <nav class="nav"><ul class="nav-list"><li class="nav-item"><a href="#" class="nav-link">Products</a></li><li class="nav-item"><a href="#" class="nav-link">Industries</a></li><li class="nav-item"><a href="#" class="nav-link">About Us</a></li><li class="nav-item"><a href="#" class="nav-link">Resources</a></li></ul></nav>
+        <div class="header-right"><a href="https://business.dtcpay.com/" class="btn btn-link" target="_blank">Log in</a><a href="contact.html" class="btn btn-primary">Book a Demo</a></div>
+        <button class="mobile-menu-btn" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01b1e9" stroke-width="2"><path d="M4 12h16M4 18h16M4 6h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="header-spacer"></div>
+
+  <main>
+    <section class="pbl-hero">
+      <div class="container">
+        <div class="pbl-hero-grid">
+          <div class="pbl-hero-text fade-in">
+            <h1>Create Payment Links And Receive Payments Instantly</h1>
+            <p>Let your customers pay using a secure payment link hosted by us and made by you. You send a link, your customer pays, and you get paid - no code required.</p>
+            <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--primary-color);">Get in Touch</a>
+          </div>
+          <div class="pbl-hero-image scale-in">
+            <img src="../assets/images/paybylink-phone.png" alt="PayByLink Interface">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+          <span class="section-tag fade-in">How It Works</span>
+          <h2 class="fade-in delay-100">Accept payments instantly, anytime anywhere.</h2>
+        </div>
+        
+        <div class="steps-grid">
+          <article class="step-card fade-in">
+            <div class="step-icon"><img src="../assets/images/create-payment-link.png" alt="Create"></div>
+            <h3 class="step-title">Create a Payment Link</h3>
+            <p class="step-desc">Use our PayByLink to sell a product or service, start a subscription, or collect payments easily and instantly without hosting checkout pages.</p>
+          </article>
+          <article class="step-card fade-in delay-100">
+            <div class="step-icon"><img src="../assets/images/share-payment-link.png" alt="Share"></div>
+            <h3 class="step-title">Share the Payment Link</h3>
+            <p class="step-desc">Paste or embed the link anywhere. The same payment link can be shared with many customers and used across multiple channels such as email, WhatsApp, and others.</p>
+          </article>
+          <article class="step-card fade-in delay-200">
+            <div class="step-icon"><img src="../assets/images/get-paid.png" alt="Get Paid"></div>
+            <h3 class="step-title">Get Paid Instantly</h3>
+            <p class="step-desc">Collect payments and view all your transactions at a glance. Receive instant email notifications for successful payments.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-tabs">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+          <h2 class="fade-in">Benefits</h2>
+        </div>
+        
+        <div class="tabs-container">
+          <button class="tab-btn active">Boost Your Revenues</button>
+          <button class="tab-btn">Accept Payments Easily</button>
+          <button class="tab-btn">Increase Conversions</button>
+        </div>
+        
+        <div class="tab-content fade-in">
+          <div class="tab-text">
+            <h3>Boost Your Revenues</h3>
+            <p>Create a safe and seamless experience, allowing customers to pay with their preferred payment methods.</p>
+          </div>
+          <div class="tab-image">
+            <img src="../assets/images/benefit-card.png" alt="Boost Your Revenues">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-list">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+          <h2 class="fade-in">Features</h2>
+        </div>
+        
+        <div class="features-flex">
+          <div class="feature-badge fade-in"><span>Fully Secure and PCI-DSS Compliant</span></div>
+          <div class="feature-badge fade-in delay-100"><span>One Dashboard for All Transactions</span></div>
+          <div class="feature-badge fade-in delay-200"><span>Accepts Any Payment Amount</span></div>
+          <div class="feature-badge fade-in"><span>Desktop and Mobile Compatible</span></div>
+          <div class="feature-badge fade-in delay-100"><span>Supports Major Stablecoins</span></div>
+          <div class="feature-badge fade-in delay-200"><span>Email Notifications & Receipts</span></div>
+          <div class="feature-badge fade-in"><span>Flexible Payment Expiry</span></div>
+          <div class="feature-badge fade-in delay-100"><span>Reusable Payment Requests</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+          <h2 class="fade-in">How We Can Help</h2>
+          <p class="fade-in delay-100">Everything you need to know about PayByLink.</p>
+        </div>
+        
+        <div class="faq-list">
+          <article class="faq-item">
+            <div class="faq-question">What is PayByLink <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+            <div class="faq-answer">PayByLink is a simple way to collect payments by creating and sharing a secure payment link with your customers. No coding required.</div>
+          </article>
+          <article class="faq-item">
+            <div class="faq-question">Can I collect custom information from my customers? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+            <div class="faq-answer">Yes, you can customize the checkout experience to collect additional information from your customers.</div>
+          </article>
+          <article class="faq-item">
+            <div class="faq-question">How am I notified of a successful payment? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+            <div class="faq-answer">You will receive instant email notifications for every successful payment. You can also view all transactions in your dashboard.</div>
+          </article>
+          <article class="faq-item">
+            <div class="faq-question">Can PayByLink accept multiple payment methods? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+            <div class="faq-answer">Yes, PayByLink supports stablecoins, credit cards, and various other payment methods.</div>
+          </article>
+          <article class="faq-item">
+            <div class="faq-question">Where can PayByLink be used? <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+            <div class="faq-answer">PayByLink can be shared via email, SMS, WhatsApp, social media, or embedded in any digital communication channel.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag fade-in">Why dtcpay</span>
+          <h2 class="fade-in delay-100">Your strategic partner in<br>flexible e-payments</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-card fade-in"><div class="why-icon"><img src="../assets/images/no-hidden-costs.png" alt=""></div><h3 class="why-title">No Hidden Costs</h3><p class="why-desc">Clear pricing structures and real-time rates.</p></article>
+          <article class="why-card fade-in delay-100"><div class="why-icon"><img src="../assets/images/seamless-secure.png" alt=""></div><h3 class="why-title">Seamless and Secure</h3><p class="why-desc">Seamlessly accept fiat or stablecoins.</p></article>
+          <article class="why-card fade-in delay-200"><div class="why-icon"><img src="../assets/images/regulated-licensed.png" alt=""></div><h3 class="why-title">Regulated and Licensed</h3><p class="why-desc">Licensed by MAS.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-text"><h3>Want to know more about our PayByLink solution?</h3><p>Connect with a payments expert to learn how dtcpay can help you grow.</p></div>
+          <a href="contact.html" class="cta-btn">Speak to us to get started</a>
+        </div>
+      </div>
+      <img src="../assets/images/banner-cta-diamond.png" alt="" class="cta-diamond">
+    </section>
+
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h4>Want to stay up to date?</h4>
+          <p>Be the first to know about releases and industry news and insights.</p>
+          <form class="newsletter-form"><input type="email" class="newsletter-input" placeholder="Enter your email" required><button type="submit" class="newsletter-btn">Subscribe</button></form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="../assets/images/dtc-light.png" alt="dtcpay"><p class="footer-tagline">Tomorrow's Payments, Today</p></div>
+        <div class="footer-column"><h5>Products</h5><ul class="footer-links"><li class="footer-link"><a href="multi-currency-swap.html">Multi-Currency Swap</a></li><li class="footer-link"><a href="pos.html">POS+</a></li><li class="footer-link"><a href="pay-by-link.html">PayByLink</a></li></ul></div>
+        <div class="footer-column"><h5>About Us</h5><ul class="footer-links"><li class="footer-link"><a href="about.html">Who we are</a></li><li class="footer-link"><a href="licenses.html">Global Licenses</a></li></ul></div>
+        <div class="footer-column"><h5>Resources</h5><ul class="footer-links"><li class="footer-link"><a href="blog.html">Blog</a></li><li class="footer-link"><a href="case-studies.html">Case Studies</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><nav class="footer-legal"><a href="terms.html">Terms of Business</a><a href="privacy.html">Privacy</a></nav><p class="footer-copyright">&copy;2026 dtcpay. All rights reserved.</p></div>
+      <div class="footer-license"><p>dtcpay is a brand of <a href="https://eservices.mas.gov.sg/fid/institution/detail/248348-DIGITAL-TREASURES-CENTER-PTE-LTD" target="_blank">Digital Treasures Center Pte Ltd</a>, licensed by MAS (PS20200531).</p></div>
+    </div>
+  </footer>
+  <a href="https://wa.me/6585000000" class="whatsapp-float" target="_blank"><img src="../assets/images/whatsapp.svg" alt="WhatsApp"></a>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>

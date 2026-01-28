@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Payments & Checkout Solutions | dtcpay</title>
+  <meta name="description" content="Maximize conversions with seamless online payments. Accept stablecoins, Alipay, WeChat Pay, UnionPay with simple API integration. PCI DSS Level 1 compliant.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dtcpay.com/online-payments">
+  <meta name="theme-color" content="#01b1e9">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/dtc-logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .checkout-hero { padding: 100px 0; background: linear-gradient(135deg, #01b1e9 0%, #0085c7 100%); }
+    .checkout-hero-grid { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; }
+    @media (min-width: 1024px) { .checkout-hero-grid { grid-template-columns: 1fr 1fr; } }
+    .checkout-hero-text { color: white; }
+    .checkout-hero-text h1 { font-size: clamp(32px, 5vw, 48px); margin-bottom: 24px; color: white; }
+    .checkout-hero-text p { font-size: 18px; color: rgba(255,255,255,0.9); margin-bottom: 32px; }
+    .checkout-hero-image img { max-width: 100%; border-radius: 16px; }
+    .stats-section { padding: 80px 0; background: white; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
+    .stat-item h3 { font-size: 48px; color: var(--primary-color); margin-bottom: 8px; }
+    .stat-item p { color: var(--text-gray); }
+    .features-alt { padding: 100px 0; background: var(--gray-50); }
+    .feature-row { display: grid; grid-template-columns: 1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+    @media (min-width: 1024px) { .feature-row { grid-template-columns: 1fr 1fr; } .feature-row.reverse { direction: rtl; } .feature-row.reverse > * { direction: ltr; } }
+    .feature-image img { max-width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg); }
+    .feature-text h3 { font-size: 28px; margin-bottom: 16px; }
+    .check-list { list-style: none; margin-top: 24px; }
+    .check-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+    .check-list li svg { flex-shrink: 0; color: var(--primary-color); margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo"><img src="../assets/images/dtc-logo.svg" alt="dtcpay Logo" width="120" height="32"></a>
+        <nav class="nav"><ul class="nav-list"><li class="nav-item"><a href="#" class="nav-link">Products</a></li><li class="nav-item"><a href="#" class="nav-link">Industries</a></li><li class="nav-item"><a href="#" class="nav-link">About Us</a></li><li class="nav-item"><a href="#" class="nav-link">Resources</a></li></ul></nav>
+        <div class="header-right"><a href="https://business.dtcpay.com/" class="btn btn-link" target="_blank">Log in</a><a href="contact.html" class="btn btn-primary">Book a Demo</a><a href="registration.html" class="btn btn-outline">Sign Up</a></div>
+        <button class="mobile-menu-btn" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01b1e9" stroke-width="2"><path d="M4 12h16M4 18h16M4 6h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <div class="header-spacer"></div>
+
+  <main>
+    <section class="checkout-hero">
+      <div class="container">
+        <div class="checkout-hero-grid">
+          <div class="checkout-hero-text fade-in">
+            <h1>Maximize Conversions With Seamless Payments</h1>
+            <p>We enable businesses to unlock new opportunities and increase checkout conversion through simple API integration.</p>
+            <a href="contact.html" class="btn btn-primary" style="background: white; color: var(--primary-color);">Get in Touch</a>
+          </div>
+          <div class="checkout-hero-image scale-in">
+            <img src="../assets/images/online-payments-hero.png" alt="Online Payments Interface">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+          <h2 class="fade-in">What we offer</h2>
+          <p class="fade-in delay-100">We offer a variety of secure online payment methods to simplify checkout and increase conversion rates.</p>
+        </div>
+        <div class="stats-grid">
+          <article class="stat-item fade-in">
+            <h3 data-count="560">560</h3>
+            <p>million crypto owners globally that want to pay in stablecoins could be your potential customers</p>
+          </article>
+          <article class="stat-item fade-in delay-100">
+            <h3>70%</h3>
+            <p>of survey consumers would likely abandon their cart if their preferred payment method is not available</p>
+          </article>
+          <article class="stat-item fade-in delay-200">
+            <h3>27%</h3>
+            <p>online shoppers will ditch their carts at checkout if the process ends up being too long or complicated</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-alt">
+      <div class="container">
+        <div class="feature-row fade-in">
+          <div class="feature-image"><img src="../assets/images/stablecoin-checkout.png" alt="Stablecoin Payments Checkout"></div>
+          <div class="feature-text">
+            <h3>Stablecoin Payments Checkout</h3>
+            <p>Let your customers pay in stablecoins</p>
+            <ul class="check-list">
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>No chargebacks, minimising the risk of fraud</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Attract new customer segments and reduce cart abandonment</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Support major stablecoins</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-row reverse fade-in">
+          <div class="feature-image"><img src="../assets/images/secured-payments.jpg" alt="Secure Payment Checkout"></div>
+          <div class="feature-text">
+            <h3>Secure Payment Checkout</h3>
+            <p>As a PCI DSS Service Provider Level 1, we encrypt, process, and store card data securely.</p>
+            <ul class="check-list">
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Compliance with PCI-DSS Level 1 requirements</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Protect consumer data and prevent fraud</span></li>
+              <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span>Compliant with international standards for AML and KYC</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature-row fade-in">
+          <div class="feature-image"><img src="../assets/images/simple-integration.png" alt="Simple Integration"></div>
+          <div class="feature-text">
+            <h3>Simple Integration</h3>
+            <p>We provide APIs and SDKs for merchants to integrate our solution seamlessly. Our complete payments solution covers everything from secure payments to refunds, with a customizable checkout flow giving you full control over your user experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag fade-in">Why dtcpay</span>
+          <h2 class="fade-in delay-100">Your strategic partner in<br>online payments</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-card fade-in"><div class="why-icon"><img src="../assets/images/no-hidden-costs.png" alt=""></div><h3 class="why-title">No Hidden Costs</h3><p class="why-desc">Clear pricing structures and real-time rates.</p></article>
+          <article class="why-card fade-in delay-100"><div class="why-icon"><img src="../assets/images/seamless-secure.png" alt=""></div><h3 class="why-title">Seamless and Secure</h3><p class="why-desc">Seamlessly accept fiat or stablecoins and securely withdraw.</p></article>
+          <article class="why-card fade-in delay-200"><div class="why-icon"><img src="../assets/images/regulated-licensed.png" alt=""></div><h3 class="why-title">Regulated and Licensed</h3><p class="why-desc">Licensed by the Monetary Authority of Singapore (MAS).</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-text"><h3>Want to know more about our Online Payments?</h3><p>Our experts can customise solutions to meet your needs.</p></div>
+          <a href="contact.html" class="cta-btn">I'm ready to grow my business</a>
+        </div>
+      </div>
+      <img src="../assets/images/banner-cta-diamond.png" alt="" class="cta-diamond">
+    </section>
+
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h4>Want to stay up to date?</h4>
+          <p>Be the first to know about releases and industry news and insights.</p>
+          <form class="newsletter-form"><input type="email" class="newsletter-input" placeholder="Enter your email" required><button type="submit" class="newsletter-btn">Subscribe</button></form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand"><img src="../assets/images/dtc-light.png" alt="dtcpay"><p class="footer-tagline">Tomorrow's Payments, Today</p></div>
+        <div class="footer-column"><h5>Products</h5><ul class="footer-links"><li class="footer-link"><a href="multi-currency-swap.html">Multi-Currency Swap</a></li><li class="footer-link"><a href="pos.html">POS+</a></li><li class="footer-link"><a href="checkout.html">Checkout</a></li><li class="footer-link"><a href="dtcpay-card.html">dtcpay Card</a></li></ul></div>
+        <div class="footer-column"><h5>About Us</h5><ul class="footer-links"><li class="footer-link"><a href="about.html">Who we are</a></li><li class="footer-link"><a href="licenses.html">Global Licenses</a></li></ul></div>
+        <div class="footer-column"><h5>Resources</h5><ul class="footer-links"><li class="footer-link"><a href="blog.html">Blog</a></li><li class="footer-link"><a href="case-studies.html">Case Studies</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><nav class="footer-legal"><a href="terms.html">Terms of Business</a><a href="privacy.html">Privacy</a></nav><p class="footer-copyright">&copy;2026 dtcpay. All rights reserved.</p></div>
+      <div class="footer-license"><p>dtcpay is a brand of <a href="https://eservices.mas.gov.sg/fid/institution/detail/248348-DIGITAL-TREASURES-CENTER-PTE-LTD" target="_blank">Digital Treasures Center Pte Ltd</a>, licensed by MAS (PS20200531).</p></div>
+    </div>
+  </footer>
+  <a href="https://wa.me/6585000000" class="whatsapp-float" target="_blank"><img src="../assets/images/whatsapp.svg" alt="WhatsApp"></a>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

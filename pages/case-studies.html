@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies - Success Stories | dtcpay</title>
+  <meta name="description" content="Discover how businesses are transforming with dtcpay's stablecoin payment solutions. Read our case studies featuring Metro, MARLO, Capa Jet and more.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dtcpay.com/case-study">
+  
+  <meta property="og:title" content="Case Studies - dtcpay">
+  <meta property="og:description" content="We've helped 20,000+ clients save money and time with stablecoin payment solutions.">
+  <meta property="og:image" content="https://dtcpay.com/assets/images/case-metro.jpg">
+  
+  <meta name="theme-color" content="#01b1e9">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/dtc-logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  
+  <style>
+    .cs-hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, #01b1e9 0%, #0085c7 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cs-hero-content {
+      max-width: 700px;
+    }
+    
+    .cs-hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      color: white;
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    .cs-hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 32px;
+    }
+    
+    .cs-hero-image {
+      position: absolute;
+      right: -50px;
+      bottom: 0;
+      height: 100%;
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .cs-hero-image {
+        display: block;
+      }
+    }
+    
+    .cs-filters {
+      padding: 40px 0;
+      background: var(--gray-50);
+    }
+    
+    .filters-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: 12px 16px 12px 44px;
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+    
+    .search-box input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(1, 177, 233, 0.1);
+    }
+    
+    .search-box svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-gray);
+    }
+    
+    .filter-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      background: white;
+      color: var(--text-gray);
+    }
+    
+    .filter-btn:hover {
+      background: rgba(1, 177, 233, 0.1);
+      color: var(--primary-color);
+    }
+    
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+    
+    .cs-grid-section {
+      padding: 60px 0 100px;
+      background: var(--gray-50);
+    }
+    
+    .cs-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    @media (min-width: 640px) {
+      .cs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .cs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .cs-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition-normal);
+      display: block;
+    }
+    
+    .cs-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 7px 20px rgba(16, 24, 40, 0.1);
+    }
+    
+    .cs-card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .cs-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    
+    .cs-card:hover .cs-card-image img {
+      transform: scale(1.05);
+    }
+    
+    .cs-card-content {
+      padding: 24px;
+    }
+    
+    .cs-card-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(1, 177, 233, 0.1);
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--primary-color);
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+    
+    .cs-card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .cs-card-excerpt {
+      font-size: 14px;
+      color: var(--text-gray);
+      margin-bottom: 16px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      opacity: 0;
+      max-height: 0;
+      transition: all var(--transition-normal);
+    }
+    
+    .cs-card:hover .cs-card-excerpt {
+      opacity: 1;
+      max-height: 100px;
+    }
+    
+    .cs-card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--text-gray);
+    }
+    
+    .cs-card-meta span:first-child {
+      font-weight: 600;
+    }
+    
+    .sidebar {
+      display: none;
+    }
+    
+    @media (min-width: 1024px) {
+      .cs-layout {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 40px;
+      }
+      
+      .sidebar {
+        display: block;
+      }
+    }
+    
+    .sidebar-section {
+      margin-bottom: 32px;
+    }
+    
+    .sidebar-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+    
+    .sidebar-list {
+      list-style: none;
+    }
+    
+    .sidebar-item {
+      margin-bottom: 4px;
+    }
+    
+    .sidebar-link {
+      display: block;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 15px;
+      color: var(--text-gray);
+      transition: all var(--transition-fast);
+    }
+    
+    .sidebar-link:hover {
+      background: rgba(1, 177, 233, 0.1);
+      color: var(--primary-color);
+    }
+    
+    .sidebar-link.active {
+      background: var(--primary-color);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo"><img src="../assets/images/dtc-logo.svg" alt="dtcpay Logo" width="120" height="32"></a>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Products <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+              <div class="dropdown">
+                <a href="multi-currency-swap.html" class="dropdown-item"><div class="dropdown-title">Multi-Currency Swap</div><div class="dropdown-desc">Convert stablecoins and fiat instantly</div></a>
+                <a href="pos.html" class="dropdown-item"><div class="dropdown-title">POS+</div><div class="dropdown-desc">Point of sale solutions</div></a>
+                <a href="checkout.html" class="dropdown-item"><div class="dropdown-title">Checkout</div><div class="dropdown-desc">Online payment gateway</div></a>
+                <a href="dtcpay-card.html" class="dropdown-item"><div class="dropdown-title">dtcpay Card</div><div class="dropdown-desc">Visa card for stablecoins</div></a>
+                <a href="pay-by-link.html" class="dropdown-item"><div class="dropdown-title">PayByLink</div><div class="dropdown-desc">Share payment links easily</div></a>
+                <a href="global-pay.html" class="dropdown-item"><div class="dropdown-title">Global Pay</div><div class="dropdown-desc">International payment solutions</div></a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Industries <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+              <div class="dropdown">
+                <a href="industries/retail.html" class="dropdown-item"><div class="dropdown-title">Retail</div><div class="dropdown-desc">Retail payment solutions</div></a>
+                <a href="industries/healthcare.html" class="dropdown-item"><div class="dropdown-title">Healthcare</div><div class="dropdown-desc">Healthcare payments</div></a>
+                <a href="industries/travel.html" class="dropdown-item"><div class="dropdown-title">Travel & Hospitality</div><div class="dropdown-desc">Travel industry payments</div></a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About Us <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+              <div class="dropdown">
+                <a href="about.html" class="dropdown-item"><div class="dropdown-title">Who We Are</div><div class="dropdown-desc">Learn about dtcpay</div></a>
+                <a href="licenses.html" class="dropdown-item"><div class="dropdown-title">Global Licenses</div><div class="dropdown-desc">Our regulatory compliance</div></a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Resources <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+              <div class="dropdown">
+                <a href="case-studies.html" class="dropdown-item"><div class="dropdown-title">Case Studies</div><div class="dropdown-desc">Success stories</div></a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <div class="header-right">
+          <a href="https://business.dtcpay.com/" class="btn btn-link" target="_blank">Log in</a>
+          <a href="contact.html" class="btn btn-primary">Book a Demo</a>
+          <a href="registration.html" class="btn btn-outline">Sign Up</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#01b1e9" stroke-width="2"><path d="M4 12h16M4 18h16M4 6h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="header-spacer"></div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="cs-hero">
+      <div class="container">
+        <div class="cs-hero-content">
+          <h1 class="fade-in">We've helped 20,000+ clients save money and time</h1>
+          <p class="fade-in delay-100">We help businesses to grow quickly by accepting the payment methods that your customers prefer across fiat and stablecoins.</p>
+          <a href="contact.html" class="btn btn-primary fade-in delay-200" style="background: white; color: var(--primary-color);">Get in Touch</a>
+        </div>
+      </div>
+      <img src="../assets/images/contact-diamond.png" alt="" class="cs-hero-image">
+    </section>
+
+    <!-- Filters Section -->
+    <section class="cs-filters">
+      <div class="container">
+        <div class="filters-wrapper">
+          <div class="search-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" placeholder="Search case studies..." id="searchInput">
+          </div>
+          <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">View All</button>
+            <button class="filter-btn" data-filter="retail">Retail</button>
+            <button class="filter-btn" data-filter="travel">Travel & Hospitality</button>
+            <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+            <button class="filter-btn" data-filter="automotive">Automotive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies Grid -->
+    <section class="cs-grid-section">
+      <div class="container">
+        <div class="cs-layout">
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar-section">
+              <h3 class="sidebar-title">Categories</h3>
+              <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="#" class="sidebar-link active" data-filter="all">View All</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-link" data-filter="retail">Retail</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-link" data-filter="travel">Travel & Hospitality</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-link" data-filter="healthcare">Healthcare</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-link" data-filter="automotive">Automotive</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-link" data-filter="arts">Arts & Culture</a></li>
+              </ul>
+            </div>
+            <div class="sidebar-section">
+              <h3 class="sidebar-title">Sort By</h3>
+              <ul class="sidebar-list">
+                <li class="sidebar-item"><a href="#" class="sidebar-link active">Newest</a></li>
+                <li class="sidebar-item"><a href="#" class="sidebar-link">Oldest</a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <!-- Case Studies Grid -->
+          <div class="cs-grid">
+            <!-- Metro Case Study -->
+            <a href="case-study/metro.html" class="cs-card fade-in" data-category="retail">
+              <div class="cs-card-image">
+                <img src="../assets/images/case-metro.jpg" alt="Metro Departmental Store" loading="lazy">
+              </div>
+              <div class="cs-card-content">
+                <span class="cs-card-tag">Retail</span>
+                <h3 class="cs-card-title">A New Era of Retail: Stablecoins Meet Everyday Shopping</h3>
+                <p class="cs-card-excerpt">As traditional retailers and service providers continue to adapt to the digital age, the dtcpay x Metro partnership showcases the ability of stablecoins to provide both flexibility and reliability in payment solutions.</p>
+                <div class="cs-card-meta">
+                  <span>1 Min Read</span>
+                  <span>5 Mar 25</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- MARLO Case Study -->
+            <a href="case-study/marlo.html" class="cs-card fade-in delay-100" data-category="retail">
+              <div class="cs-card-image">
+                <img src="../assets/images/case-marlo.png" alt="MARLO Bespoke Tailor" loading="lazy">
+              </div>
+              <div class="cs-card-content">
+                <span class="cs-card-tag">Retail</span>
+                <h3 class="cs-card-title">Stablecoin Payments in Bespoke Tailoring</h3>
+                <p class="cs-card-excerpt">MARLO, Singapore's leading luxury bespoke tailor, has partnered with dtcpay to offer increased payment options and convenience for customers by accepting stablecoin payments.</p>
+                <div class="cs-card-meta">
+                  <span>1 Min Read</span>
+                  <span>24 Aug 24</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Capa Jet Case Study -->
+            <a href="case-study/capajet.html" class="cs-card fade-in delay-200" data-category="travel">
+              <div class="cs-card-image">
+                <img src="../assets/images/case-capajet.png" alt="Capa Jet Private Aviation" loading="lazy">
+              </div>
+              <div class="cs-card-content">
+                <span class="cs-card-tag">Travel & Hospitality</span>
+                <h3 class="cs-card-title">Luxury Meets Efficiency. Stablecoin Payments in Private Jet Leasing</h3>
+                <p class="cs-card-excerpt">Capa Jet, renowned for delivering the ultimate bespoke flying experience, has partnered with dtcpay to expand its payment options by accepting a variety of stablecoins.</p>
+                <div class="cs-card-meta">
+                  <span>1 Min Read</span>
+                  <span>23 Aug 24</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Five Iron Golf Case Study (Placeholder) -->
+            <a href="case-study/five-iron-golf.html" class="cs-card fade-in" data-category="travel">
+              <div class="cs-card-image">
+                <img src="../assets/images/case-metro.jpg" alt="Five Iron Golf" loading="lazy">
+              </div>
+              <div class="cs-card-content">
+                <span class="cs-card-tag">Travel & Hospitality</span>
+                <h3 class="cs-card-title">Teeing Up the Future of Golf</h3>
+                <p class="cs-card-excerpt">Five Iron Golf embraces digital payment innovations to enhance the golfing experience for their members and guests.</p>
+                <div class="cs-card-meta">
+                  <span>1 Min Read</span>
+                  <span>15 Jul 24</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Christopher Guy Case Study (Placeholder) -->
+            <a href="case-study/christopher-guy.html" class="cs-card fade-in delay-100" data-category="retail">
+              <div class="cs-card-image">
+                <img src="../assets/images/case-marlo.png" alt="Christopher Guy" loading="lazy">
+              </div>
+              <div class="cs-card-content">
+                <span class="cs-card-tag">Retail</span>
+                <h3 class="cs-card-title">Embracing Stablecoin Payments in Luxury Furniture</h3>
+                <p class="cs-card-excerpt">Christopher Guy, the renowned luxury furniture brand, partners with dtcpay to offer modern payment solutions to their discerning clientele.</p>
+                <div class="cs-card-meta">
+                  <span>1 Min Read</span>
+                  <span>10 Jun 24</span>
+                </div>
+              </div>
+            </a>
+
+            <!-- Lumin Eye Case Study (Placeholder) -->
+            <a href="case-study/lumin-eye.html" class="cs-card fade-in delay-200" data-category="healthcare">
+              <div class="cs-card-image">
+                <img src="../assets/images/case-capajet.png" alt="Lumin Eye" loading="lazy">
+              </div>
+              <div class="cs-card-content">
+                <span class="cs-card-tag">Healthcare</span>
+                <h3 class="cs-card-title">Stablecoin Payments in Eye Care</h3>
+                <p class="cs-card-excerpt">Lumin Eye transforms healthcare payments by adopting stablecoin solutions for faster, more convenient transactions.</p>
+                <div class="cs-card-meta">
+                  <span>1 Min Read</span>
+                  <span>5 May 24</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <div class="cta-text">
+            <h3 class="fade-in">Ready to grow your business?</h3>
+            <p class="fade-in delay-100">Join 20,000+ businesses accepting stablecoin payments with dtcpay.</p>
+          </div>
+          <a href="contact.html" class="cta-btn fade-in delay-200">Book a Demo</a>
+        </div>
+      </div>
+      <img src="../assets/images/banner-cta-diamond.png" alt="" class="cta-diamond">
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h4>Want to stay up to date?</h4>
+          <p>Be the first to know about releases and industry news and insights.</p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+          <p class="newsletter-note">We care about your data in our <a href="privacy.html">privacy policy</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="../assets/images/dtc-light.png" alt="dtcpay">
+          <p class="footer-tagline">Tomorrow's Payments, Today</p>
+          <nav class="social-links">
+            <a href="https://www.linkedin.com/company/dtcpay/" class="social-link" target="_blank"><img src="../assets/images/linkedin-light.svg" alt="LinkedIn"></a>
+            <a href="https://twitter.com/dtc_pay" class="social-link" target="_blank"><img src="../assets/images/x.svg" alt="Twitter"></a>
+            <a href="https://www.facebook.com/dtcpay" class="social-link" target="_blank"><img src="../assets/images/facebook-light.svg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/dtcpay/" class="social-link" target="_blank"><img src="../assets/images/instagram-light.svg" alt="Instagram"></a>
+          </nav>
+        </div>
+        <div class="footer-column">
+          <h5>Products</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="multi-currency-swap.html">Multi-Currency Swap</a></li>
+            <li class="footer-link"><a href="pos.html">POS+</a></li>
+            <li class="footer-link"><a href="checkout.html">Checkout</a></li>
+            <li class="footer-link"><a href="dtcpay-card.html">dtcpay Card</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>About Us</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="about.html">Who we are</a></li>
+            <li class="footer-link"><a href="licenses.html">Global Licenses</a></li>
+            <li class="footer-link"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h5>Resources</h5>
+          <ul class="footer-links">
+            <li class="footer-link"><a href="case-studies.html">Case Studies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <nav class="footer-legal">
+          <a href="terms.html">Terms of Business</a>
+          <a href="risk-warning.html">Risk Warning</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+        <p class="footer-copyright">&copy;2026 dtcpay. All rights reserved.</p>
+      </div>
+      <div class="footer-license">
+        <p>dtcpay is a brand of <a href="https://eservices.mas.gov.sg/fid/institution/detail/248348-DIGITAL-TREASURES-CENTER-PTE-LTD" target="_blank">Digital Treasures Center Pte Ltd</a>, licensed by MAS (PS20200531).</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6585000000" class="whatsapp-float" target="_blank"><img src="../assets/images/whatsapp.svg" alt="WhatsApp"></a>
+  <button class="scroll-top"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('.filter-btn, .sidebar-link[data-filter]');
+    const cards = document.querySelectorAll('.cs-card');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const filter = btn.dataset.filter;
+        
+        // Update active state
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Filter cards
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector('.cs-card-title').textContent.toLowerCase();
+        const excerpt = card.querySelector('.cs-card-excerpt').textContent.toLowerCase();
+        if (title.includes(query) || excerpt.includes(query)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

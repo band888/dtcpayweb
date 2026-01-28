@@ -368,26 +368,26 @@ body {
 }
 
 /* ============================================
-   App Download Section
+   App Download Section - Light Theme
    ============================================ */
 .app-section-new {
   background: var(--app-bg-end);
 }
 
 .app-download-card {
-  background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 30%, #162850 60%, #1a3a5c 100%);
-  box-shadow: 0 20px 60px rgba(6, 10, 49, 0.4);
-  border: 1px solid rgba(1, 177, 233, 0.2);
+  background: linear-gradient(135deg, #01b1e9 0%, #29b6f6 30%, #4fc3f7 60%, #81d4fa 100%);
+  box-shadow: 0 15px 40px rgba(1, 177, 233, 0.25);
+  border: none;
 }
 
 .app-download-bg {
   background: 
-    radial-gradient(ellipse at 10% 50%, rgba(1, 177, 233, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 50%, rgba(74, 144, 217, 0.1) 0%, transparent 50%);
+    radial-gradient(ellipse at 10% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
 }
 
 .app-download-bg::before {
-  background: radial-gradient(circle, rgba(1, 177, 233, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
 }
 
 /* ============================================

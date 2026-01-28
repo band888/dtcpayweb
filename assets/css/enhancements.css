@@ -839,29 +839,26 @@
 }
 
 .app-icon-wrapper {
-  width: 90px;
-  height: 90px;
-  background: linear-gradient(135deg, rgba(1, 177, 233, 0.15) 0%, rgba(6, 10, 49, 0.3) 100%);
-  border-radius: 22px;
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 2px solid rgba(1, 177, 233, 0.4);
-  box-shadow: 
-    0 0 30px rgba(1, 177, 233, 0.2),
-    inset 0 0 20px rgba(1, 177, 233, 0.1);
+  border: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .app-icon {
   width: 50px;
   height: 50px;
-  filter: brightness(0) invert(1);
 }
 
 .app-icon-svg {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
 }
 
 .app-info h4 {

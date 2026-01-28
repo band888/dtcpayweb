@@ -1,0 +1,531 @@
+/* ============================================
+   dtcpay App-Style Theme
+   Fresh, light cyan/blue gradient design
+   Matching the new mobile app aesthetic
+   ============================================ */
+
+/* Override color variables with app theme */
+:root {
+  /* New App-style colors */
+  --app-bg-start: #e8f7fc;
+  --app-bg-mid: #d4f1f9;
+  --app-bg-end: #f0fbff;
+  --app-cyan: #01b1e9;
+  --app-cyan-light: #5dd3f3;
+  --app-cyan-dark: #0095c8;
+  --app-blue: #4a90d9;
+  --app-white: #ffffff;
+  --app-gray-light: #f8fbfd;
+  --app-gray: #e8eef3;
+  --app-text-dark: #1a2b3c;
+  --app-text-medium: #5a6b7c;
+  --app-text-light: #8a9bac;
+  
+  /* Glass effect */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-shadow: 0 8px 32px rgba(1, 177, 233, 0.1);
+  
+  /* Soft shadows */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 8px 30px rgba(1, 177, 233, 0.12);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   Global Background
+   ============================================ */
+body {
+  background: linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-mid) 30%, var(--app-bg-end) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* ============================================
+   Header - Frosted Glass Style
+   ============================================ */
+.header {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: var(--shadow-medium);
+}
+
+/* ============================================
+   Hero Slider - Light Gradient Style
+   ============================================ */
+.hero-slider {
+  background: linear-gradient(135deg, var(--app-bg-start) 0%, var(--app-bg-mid) 50%, #c9eaf7 100%);
+}
+
+.hero-slider::before {
+  background: 
+    radial-gradient(ellipse at 30% 20%, rgba(1, 177, 233, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(93, 211, 243, 0.1) 0%, transparent 50%);
+}
+
+.slide-bg {
+  opacity: 0.95;
+}
+
+.slide-content {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  max-width: 500px;
+}
+
+.slide-title {
+  color: var(--app-text-dark) !important;
+  text-shadow: none;
+  font-size: clamp(24px, 4vw, 36px);
+}
+
+.slide-btn {
+  background: var(--app-cyan);
+  color: white;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(1, 177, 233, 0.3);
+}
+
+.slide-btn:hover {
+  background: var(--app-cyan-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(1, 177, 233, 0.4);
+}
+
+/* Slider navigation */
+.slider-dot {
+  background: rgba(1, 177, 233, 0.3);
+  width: 10px;
+  height: 10px;
+}
+
+.slider-dot.active {
+  background: var(--app-cyan);
+}
+
+.slider-arrow {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+.slider-arrow:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.slider-arrow svg {
+  stroke: var(--app-cyan);
+}
+
+/* ============================================
+   Multi-Currency Section
+   ============================================ */
+.multi-currency-section {
+  background: linear-gradient(180deg, #b8e8f5 0%, var(--app-bg-mid) 50%, var(--app-bg-end) 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.multi-currency-section::before {
+  background: 
+    radial-gradient(ellipse at 20% 30%, rgba(1, 177, 233, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 70%, rgba(74, 144, 217, 0.1) 0%, transparent 60%);
+}
+
+.multi-currency-content {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 50px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.multi-currency-content h6 {
+  color: var(--app-cyan) !important;
+}
+
+.multi-currency-content h2 {
+  color: var(--app-text-dark) !important;
+}
+
+.multi-currency-content p {
+  color: var(--app-text-medium) !important;
+}
+
+/* ============================================
+   Trusted Section
+   ============================================ */
+.trusted-section {
+  background: var(--app-bg-end);
+}
+
+/* ============================================
+   Products Section - Glass Cards
+   ============================================ */
+.products-section {
+  background: linear-gradient(180deg, var(--app-bg-end) 0%, var(--app-bg-start) 100%);
+}
+
+.product-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.product-card::before {
+  display: none;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(1, 177, 233, 0.3) !important;
+}
+
+.product-card-content {
+  background: white;
+}
+
+.learn-more-link {
+  color: var(--app-cyan);
+}
+
+/* ============================================
+   Features Section
+   ============================================ */
+.features-section {
+  background: linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-mid) 100%);
+}
+
+.features-bg {
+  opacity: 0.1;
+}
+
+.features-image img {
+  border-radius: 20px;
+  box-shadow: var(--shadow-medium);
+}
+
+.feature-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(1, 177, 233, 0.3);
+}
+
+.feature-card::before {
+  background: radial-gradient(circle, rgba(1, 177, 233, 0.05) 0%, transparent 70%);
+}
+
+.feature-icon {
+  background: linear-gradient(135deg, var(--app-cyan) 0%, var(--app-cyan-light) 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(1, 177, 233, 0.25);
+}
+
+/* ============================================
+   Why dtcpay Section
+   ============================================ */
+.why-section {
+  background: linear-gradient(180deg, var(--app-bg-mid) 0%, var(--app-bg-end) 100%);
+}
+
+.why-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.why-card:hover {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-medium);
+}
+
+.why-card::before {
+  background: linear-gradient(90deg, var(--app-cyan) 0%, var(--app-cyan-light) 100%);
+}
+
+/* ============================================
+   Testimonials Section
+   ============================================ */
+.testimonials-section {
+  background: linear-gradient(180deg, var(--app-bg-end) 0%, var(--app-bg-start) 100%);
+}
+
+.testimonial-card {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.testimonial-card::before {
+  color: rgba(1, 177, 233, 0.1);
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-medium);
+  border-color: rgba(1, 177, 233, 0.2) !important;
+}
+
+.testimonial-slider::before {
+  background: linear-gradient(90deg, var(--app-bg-end) 0%, transparent 100%);
+}
+
+.testimonial-slider::after {
+  background: linear-gradient(-90deg, var(--app-bg-start) 0%, transparent 100%);
+}
+
+/* ============================================
+   Case Studies Section
+   ============================================ */
+.case-studies-section {
+  background: linear-gradient(180deg, var(--app-bg-start) 0%, var(--app-bg-mid) 100%);
+}
+
+.case-study-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.case-study-card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.case-study-card::before {
+  background: linear-gradient(90deg, var(--app-cyan) 0%, var(--app-cyan-light) 100%);
+}
+
+.case-study-content {
+  background: white;
+}
+
+.case-study-tag {
+  background: linear-gradient(135deg, var(--app-cyan) 0%, var(--app-cyan-light) 100%);
+  color: white;
+}
+
+/* ============================================
+   CTA Section - Soft Gradient
+   ============================================ */
+.cta-section {
+  background: linear-gradient(135deg, var(--app-cyan) 0%, var(--app-blue) 50%, #6a5acd 100%) !important;
+  animation: none;
+}
+
+.cta-section::before {
+  background: 
+    radial-gradient(ellipse at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: none;
+}
+
+.cta-btn {
+  background: white;
+  color: var(--app-cyan);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   App Download Section
+   ============================================ */
+.app-section-new {
+  background: linear-gradient(180deg, var(--app-bg-mid) 0%, var(--app-bg-start) 100%);
+}
+
+.app-download-card {
+  background: linear-gradient(135deg, var(--app-cyan) 0%, var(--app-blue) 50%, #5a6fd6 100%);
+  box-shadow: 0 15px 50px rgba(1, 177, 233, 0.25);
+}
+
+/* ============================================
+   Newsletter Section
+   ============================================ */
+.newsletter-section {
+  background: var(--app-bg-end);
+  border-top: 1px solid rgba(1, 177, 233, 0.1);
+}
+
+.newsletter-input {
+  background: white;
+  border: 1px solid var(--app-gray);
+  border-radius: 12px;
+}
+
+.newsletter-input:focus {
+  border-color: var(--app-cyan);
+  box-shadow: 0 0 0 3px rgba(1, 177, 233, 0.1);
+}
+
+.newsletter-btn {
+  background: var(--app-cyan);
+  border-radius: 12px;
+}
+
+.newsletter-btn:hover {
+  background: var(--app-cyan-dark);
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  background: linear-gradient(180deg, #0a1628 0%, #060a31 100%);
+}
+
+.footer::before {
+  background: linear-gradient(90deg, var(--app-cyan) 0%, var(--app-cyan-light) 50%, var(--app-blue) 100%);
+}
+
+/* ============================================
+   Buttons - App Style
+   ============================================ */
+.btn-primary {
+  background: var(--app-cyan) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(1, 177, 233, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--app-cyan-dark) !important;
+  box-shadow: 0 6px 20px rgba(1, 177, 233, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border-color: var(--app-cyan);
+  color: var(--app-cyan);
+  border-radius: 12px;
+}
+
+.btn-outline:hover {
+  background: rgba(1, 177, 233, 0.1);
+  border-color: var(--app-cyan);
+}
+
+/* ============================================
+   Scroll to Top - App Style
+   ============================================ */
+.scroll-top {
+  background: var(--app-cyan);
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(1, 177, 233, 0.3);
+}
+
+.scroll-top:hover {
+  background: var(--app-cyan-dark);
+}
+
+/* ============================================
+   WhatsApp Button
+   ============================================ */
+.whatsapp-float {
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* ============================================
+   Page Loader - App Style
+   ============================================ */
+.page-loader {
+  background: linear-gradient(135deg, var(--app-bg-start) 0%, var(--app-bg-mid) 50%, var(--app-bg-end) 100%);
+}
+
+.loader-logo {
+  filter: none;
+}
+
+.loader-progress {
+  background: linear-gradient(90deg, var(--app-cyan) 0%, var(--app-cyan-light) 100%);
+}
+
+/* ============================================
+   Cursor Glow - Subtle
+   ============================================ */
+.cursor-glow {
+  background: radial-gradient(circle, rgba(1, 177, 233, 0.06) 0%, transparent 70%);
+}
+
+/* ============================================
+   Section Tags
+   ============================================ */
+.section-tag {
+  background: rgba(1, 177, 233, 0.1);
+  color: var(--app-cyan);
+  border: 1px solid rgba(1, 177, 233, 0.2);
+}
+
+/* ============================================
+   Notification Bar
+   ============================================ */
+.notification-bar {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(1, 177, 233, 0.1);
+}
+
+/* ============================================
+   Mobile Responsive Adjustments
+   ============================================ */
+@media (max-width: 768px) {
+  .slide-content {
+    padding: 30px;
+    margin: 20px;
+    max-width: calc(100% - 40px);
+  }
+  
+  .multi-currency-content {
+    padding: 30px;
+  }
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .page-loader {
+    background: var(--app-bg-mid);
+  }
+}
